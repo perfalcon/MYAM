@@ -26,4 +26,5 @@
     <color name="colorPrimary">#64dd17</color>
     <color name="colorPrimaryDark">#1b5e20</color>
     <color name="article_title">#fff</color>
+    <color name="fab_background">#ff0000</color>
 </resources>
