@@ -1,0 +1,120 @@
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:baselineAligned="false"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="match_parent"
+        android:layout_weight="@dimen/ll_weight">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvDetailLand"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/ArticleDetailCardViewAppearanceLand" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/poster"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/zero_dp"
+                android:layout_weight="@dimen/image_weight"
+                android:layout_marginEnd="@dimen/image_margin"
+                android:layout_marginStart="@dimen/image_margin"
+                android:layout_marginTop="@dimen/image_margin"
+                android:scaleType="centerCrop"
+                android:contentDescription="@null" />
+
+            <TextView
+                android:id="@+id/article_title_land"
+                style="@style/CollapsingTextAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/zero_dp"
+                android:layout_weight="@dimen/text_article_title_weight"
+                android:layout_marginTop="@dimen/text_article_marginTop"
+                android:layout_marginEnd="@dimen/text_article_marginEnd"
+                android:layout_marginStart="@dimen/text_article_marginStart"
+                android:textColor="@color/secondaryTextColor" />
+
+        </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="match_parent"
+        android:layout_weight="@dimen/ll_weight_2">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/ArticleDetailCardViewAppearance" >
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <com.example.xyzreader.util.MaxWidthLinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="@dimen/detail_card_max_width"
+                    android:background="#fff">
+
+                    <TextView
+                        android:id="@+id/article_byline"
+                        style="?android:attr/textAppearanceSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:layout_marginTop="@dimen/text_article_detail_byline_marginTop"
+                        android:layout_marginEnd="@dimen/text_article_detail_byline_marginEnd"
+                        android:layout_marginStart="@dimen/text_article_detail_byline_marginStart"
+                        android:textColor="@color/secondaryTextColor" />
+<!--
+                    <View
+                        android:layout_width="40dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/secondaryTextColor"/> -->
+
+                    <View
+                        android:layout_width="@dimen/view_article_detail_width"
+                        android:layout_height="@dimen/view_article_detail_height"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/view_article_detail_MarginTop"
+                        android:layout_marginEnd="@dimen/view_article_detail_MarginEnd"
+                        android:background="@color/colorPrimary"/>
+
+                    <TextView
+                        android:id="@+id/article_body"
+                        style="?android:attr/textAppearanceMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/text_article_detail_body_MarginTop"
+                        android:paddingBottom="@dimen/detail_body_bottom_margin"
+                        android:textColor="@color/primaryTextColor"
+                        android:textColorLink="@color/colorAccent"
+                        android:textSize="@dimen/text_article_detail_body_size"
+                        android:fontFamily="sans-serif"
+                        android:textStyle="bold"
+                        android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier" />
+
+                </com.example.xyzreader.util.MaxWidthLinearLayout>
+                </ScrollView>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
