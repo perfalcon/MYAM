@@ -8,4 +8,40 @@
     <dimen name="fab_press_translation_z">6dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
+    <dimen name="list_rv_padding_bottom">8dp</dimen>
+    <dimen name="list_rv_padding_top">4dp</dimen>
+
+    <dimen name="toolbar_ctl_margin_end">64dp</dimen>
+    <dimen name="toolbar_ctl_margin_start">48dp</dimen>
+
+    <dimen name="app_bar_elevation">4dp</dimen>
+    <dimen name="list_image_height">200dp</dimen>
+    <dimen name="text_article_pad">16dp</dimen>
+    <dimen name="text_article_pad_bottom">4dp</dimen>
+    <dimen name="collapse_article_detail_height">300dp</dimen>
+    <dimen name="collapse_article_detail_MarginBottom">94dp</dimen>
+    <dimen name="nestedscroll_article_detail_top">78dp</dimen>
+    <dimen name="text_article_detail_byline_marginTop">8dp</dimen>
+    <dimen name="text_article_detail_byline_marginEnd">16dp</dimen>
+    <dimen name="text_article_detail_byline_marginStart">16dp</dimen>
+    <dimen name="view_article_detail_width">30dp</dimen>
+    <dimen name="view_article_detail_height">1dp</dimen>
+    <dimen name="view_article_detail_MarginTop">72dp</dimen>
+    <dimen name="view_article_detail_MarginEnd">16dp</dimen>
+    <dimen name="text_article_detail_body_MarginTop">16dp</dimen>
+    <dimen name="text_article_detail_body_size">18sp</dimen>
+    <dimen name="image_margin">8dp</dimen>
+    <dimen name="image_weight">4</dimen>
+    <dimen name="ll_weight">2</dimen>
+    <dimen name="ll_weight_2">3</dimen>
+    <dimen name="zero_dp">0dp</dimen>
+    <dimen name="text_article_title_weight">1</dimen>
+    <dimen name="text_article_marginTop">12dp</dimen>
+    <dimen name="text_article_marginEnd">8dp</dimen>
+    <dimen name="text_article_marginStart">12dp</dimen>
+
+
+
+
+
 </resources>

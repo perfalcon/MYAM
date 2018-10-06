@@ -1,11 +1,12 @@
 package com.example.xyzreader.ui;
 
-import android.app.LoaderManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.Loader;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.Loader;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -80,7 +81,7 @@ public class ArticleListActivity extends AppCompatActivity implements
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        getLoaderManager().initLoader(0, null, this);
+        getSupportLoaderManager().initLoader(0, null, this);
 
         if (savedInstanceState == null) {
             refresh();
@@ -163,8 +164,12 @@ public class ArticleListActivity extends AppCompatActivity implements
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(Intent.ACTION_VIEW,
-                            ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))));
+                 Intent mIntent=new Intent(Intent.ACTION_VIEW,
+                         ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition())));
+                 mIntent.putExtra("title",mCursor.getString(ArticleLoader.Query.TITLE));
+                 mIntent.putExtra("author",mCursor.getString(ArticleLoader.Query.AUTHOR));
+                 mIntent.putExtra("image",mCursor.getString(ArticleLoader.Query.PHOTO_URL));
+                 startActivity(mIntent);
                 }
             });
             return vh;
@@ -185,6 +190,8 @@ public class ArticleListActivity extends AppCompatActivity implements
         public void onBindViewHolder( final ViewHolder holder, int position) {
             mCursor.moveToPosition(position);
             holder.titleView.setText(mCursor.getString(ArticleLoader.Query.TITLE));
+            Log.v(TAG,"Title-->"+mCursor.getString (ArticleLoader.Query.TITLE));
+            Log.v(TAG,"Photo Url-->"+mCursor.getString (ArticleLoader.Query.PHOTO_URL));
             Date publishedDate = parsePublishedDate();
             if (!publishedDate.before(START_OF_EPOCH.getTime())) {
 
@@ -201,11 +208,7 @@ public class ArticleListActivity extends AppCompatActivity implements
                         + "<br/>" + " by "
                         + mCursor.getString(ArticleLoader.Query.AUTHOR)));
             }
-           /* holder.thumbnailView.setImageUrl(
-                    mCursor.getString(ArticleLoader.Query.THUMB_URL),
-                    ImageLoaderHelper.getInstance(ArticleListActivity.this).getImageLoader());
-            holder.thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
-*/
+
             Glide.with(holder.thumbnailView.getContext())
                     .asBitmap()
                     .load(mCursor.getString(ArticleLoader.Query.THUMB_URL))
@@ -245,7 +248,6 @@ public class ArticleListActivity extends AppCompatActivity implements
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        //public DynamicHeightNetworkImageView thumbnailView;
         public ImageView thumbnailView;
         public TextView titleView;
         public TextView subtitleView;
@@ -253,7 +255,6 @@ public class ArticleListActivity extends AppCompatActivity implements
 
         public ViewHolder(View view) {
             super(view);
-            //thumbnailView = (DynamicHeightNetworkImageView) view.findViewById(R.id.thumbnail);
             thumbnailView = view.findViewById (R.id.thumbnail);
             titleView = (TextView) view.findViewById(R.id.article_title);
             subtitleView = (TextView) view.findViewById(R.id.article_subtitle);

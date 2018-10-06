@@ -22,12 +22,8 @@ allprojects {
     }
 
     ext {
-        //androidSupportVersion = "25.4.0"
         androidSupportVersion = "27.1.1"
-     //   okHttpVersion = "3.10.0"
         glideVersion = "4.7.1"
-      //  kenburnsviewVersion ="1.0.7"
-
     }
 }
 
