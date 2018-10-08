@@ -41,7 +41,7 @@
     <dimen name="text_article_marginStart">12dp</dimen>
     <dimen name="rv_marginTop">60dp</dimen>
     <dimen name="rv_marginBottom">28dp</dimen>
-    <dimen name="fl_elevation">8dp</dimen>
+    <dimen name="topbar_elevation">4dp</dimen>
 
 
 

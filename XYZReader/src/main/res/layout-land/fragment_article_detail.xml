@@ -98,16 +98,14 @@
 
                     <TextView
                         android:id="@+id/article_body"
-                        style="?android:attr/textAppearanceMedium"
+                        style="@style/Base.TextAppearance.AppCompat.Body1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/text_article_detail_body_MarginTop"
                         android:paddingBottom="@dimen/detail_body_bottom_margin"
-                        android:textColor="@color/primaryTextColor"
-                        android:textColorLink="@color/colorAccent"
+
                         android:textSize="@dimen/text_article_detail_body_size"
                         android:fontFamily="sans-serif"
-                        android:textStyle="bold"
                         android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier" />
 
                 </com.example.xyzreader.util.MaxWidthLinearLayout>
